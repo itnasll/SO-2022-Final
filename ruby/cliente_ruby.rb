@@ -4,11 +4,10 @@ s = TCPSocket.new '0.0.0.0', 4000
 
 loop do
   sms = gets
-  s.puts sms
+  s.puts "cliente dice: " + sms 
   line = s.gets
-  puts line    
-  sms = gets
-  s.puts sms
+  puts  line    
+  
   
 end
 s.close        

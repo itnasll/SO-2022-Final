@@ -15,7 +15,7 @@ client.on('error',(err)=>{
     console.log(err.message)
 })
 client.on('data',(data)=>{
-    console.log('el servidor dice: \t'+ data)
+    console.log(''+ data)
     sendLine()
 })
 
@@ -24,7 +24,7 @@ function sendLine(){
     if (line == "0"){
         client.end()
     }else{
-        client.write(line)
+        client.write("cliente dice: " + line +"\n")
     }
 
 }

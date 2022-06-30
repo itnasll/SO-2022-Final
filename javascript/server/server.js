@@ -5,7 +5,7 @@ const server = net.createServer()
 
 server.on('connection',(socket)=>{
     socket.on('data', data =>{
-        console.log('mensaje recibido desde el cliente\t'+ data)
+        console.log(""+ data)
         sendLine()
     })
     socket.on('close',()=>{
@@ -19,7 +19,7 @@ server.on('connection',(socket)=>{
         if (line == "0"){
             socket.end()
         }else{
-            socket.write(line)
+            socket.write("servidor dice: " + line + "\n")
         }
     
     }
