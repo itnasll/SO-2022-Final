@@ -1,6 +1,6 @@
 require 'socket'
 
-s = TCPSocket.new '0.0.0.0', 4000
+s = TCPSocket.new 'localhost', 2000
 
 loop do
   sms = gets
@@ -10,4 +10,4 @@ loop do
   
   
 end
-s.close        
+s.close   

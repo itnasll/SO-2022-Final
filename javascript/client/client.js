@@ -1,7 +1,7 @@
 var net = require('net');
 const readline = require('readline-sync')
 const options = {
-    port : 4000,
+    port : 2000,
     host: 'localhost'
 }
 const client = net.createConnection(options)
@@ -11,20 +11,20 @@ client.on('connect',()=>{
     sendLine()
 })
 
-client.on('error',(err)=>{
+/*client.on('error',(err)=>{
     console.log(err.message)
-})
+})*/
 client.on('data',(data)=>{
-    console.log(''+ data)
+    console.log(""+data)
     sendLine()
 })
 
 function sendLine(){
-    var line = readline.question('digite algo\t')
+    var line = readline.question('digite algo:\t')
     if (line == "0"){
         client.end()
     }else{
-        client.write("cliente dice: " + line +"\n")
+        client.write("servidor dice: " + line + "\n")
     }
 
 }
